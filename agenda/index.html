@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Agenda</title>
+  <style>
+    input:required {
+      border: 2px solid black;
+    }
+
+    input:optional {
+      border: 1px solid gray;
+    }
+
+    input:invalid {
+      border: 1px solid red;
+    }
+
+    input:valid {
+      border: 1px solid green;
+    }
+  </style>
+</head>
+<body>
+  <form class="" action="data.php" method="post">
+    <fieldset>
+      <legend>Cadastro de amigos</legend>
+      <label for="txt-nome">Nome: </label>
+      <br>
+      <input type="text" name="txt-nome" id="txt-nome" maxlength="50"
+      placeholder="João da Silva" pattern="[a-zA-Z]+{3,}" required>
+      <br><br>
+      <label for="email">Email: </label>
+      <br>
+      <input type="email" name="email" id="email" maxlength="50"
+      placeholder="josilva@me.com" pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:[A-Z]{2}|com|org|net|gov|mil|biz|info|mobi|name|aero|jobs|museum|br)\b" required>
+      <br><br>
+      <label for="txt-endereco">Endereço: </label>
+      <br>
+      <input type="text" name="txt-endereco" id="txt-endereco" maxlength="200"
+      placeholder="P. Sherman, 42, Wallaby Way, Sydney" pattern="(ˆ@)" required>
+      <br><br>
+      <label for="tel-telefone">Telefone: </label>
+      <br>
+      <input type="tel" name="tel-telefone" id="tel-telefone" minlength="10"
+      maxlength="11" placeholder="1125768905" pattern="\d{10,11}" required>
+      <br><br>
+      <label for="url-twitter">Twitter: </label>
+      <br>
+      <input type="url" name="url-twitter" id="url-twitter" minlength="21"
+      maxlength="40" placeholder="https://www.twitter.com/drfnfurter">
+      <br><br>
+      <button type="submit" id="btn-enviar">Gravar dados</button>
+    </fieldset>
+  </form>
+  <script>
+  (function() {
+    var campoEndereco = document.getElementById('txt-endereco');
+    if (!campoEndereco.checkValidity()) {
+      campoEndereco.setCustomValidity("Não pode conter caracteres especiais.");
+    }
+  }());
+  </script>
+</body>
+</html>

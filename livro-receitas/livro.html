@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Livro de receitas</title>
+  <style>
+    div {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <form id="form-busca">
+    <fieldset>
+      <legend>Busca de receitas</legend>
+      <label for="txt-nome">Receita de: </label>
+      <input list="receitas" id="campo-busca"
+      placeholder="Digite para pesquisar">
+      <datalist id="receitas">
+        <option data-value="1" value="Bolo de Laranja">
+        <option data-value="2" value="Bolo de Chocolate">
+        <option data-value="3" value="Frappuccino">
+        <option data-value="4" value="Biscoito da Luzia">
+        <option data-value="5" value="Hamburguer de forno">
+      </datalist>
+      <br>
+    </fieldset>
+  </form>
+
+  <div id="bolo-laranja">
+    <h2>Bolo de laranja</h2>
+    <h3>Ingredientes</h3>
+    <ul>
+      <li>2 xícaras de farinha de trigo</li>
+      <li>2 xícaras de açúcar</li>
+      <li>1 xícara de suco de laranja ou refrigerante de laranja de boa qualidade</li>
+      <li>4 ovos</li>
+      <li>1 colher de chá de fermento em pó Dr. Oetker</li>
+    </ul>
+    <h3>Modo de preparo</h3>
+    <p>
+      Bata as claras em neve, misture as gemas e o açúcar e torne a bater <br>
+      Depois, misture a farinha e o suco de laranja<br>
+      Por último acrescente o fermento<br>
+      Leve ao forno para assar em forma untada e polvilhada por cerca de 40 minutos em 180°C (dependendo do forno)
+    </p>
+  </div>
+
+  <div id="bolo-chocolate">
+    <h2>Bolo de chocolate</h2>
+    <h3>Ingredientes</h3>
+    <ul>
+      <li>3 copos de farinha de trigo (copo de requeijão) ou 250g</li>
+      <li>2 copos de açúcar cristal</li>
+      <li>1 copo e 1/2 de chocolate em pó</li>
+      <li>1 colher (sopa) de fermento royal</li>
+      <li>1 pitada de sal</li>
+      <li>3 ovos</li>
+      <li>1 copo 2 dedos de óleo</li>
+      <li>1 copo de leite</li>
+      <li>1 copo e 1/2 de água</li>
+    </ul>
+    <h3>Modo de preparo</h3>
+    <p>
+      Em uma bacia grande: colocar a farinha de trigo, o açúcar, o chocolate, o fermento e o sal<br>
+      Misture muito bem esses ingredientes<br>
+      Fazer um buraco em cada lado da bacia: em um colocar: os ovos e o óleo, esquentar o leite com a água (não pode ferver) e colocar do outro lado<br>
+      Mexer bem, coloque em forma untada para assar por mais ou menos 50 minutos em temperatura média (180º graus) pode fazer cobertura de brigadeiro<br>
+      Fica macio, delicioso e prático
+    </p>
+  </div>
+
+  <div id="frappuccino">
+    <h2>Frappuccino</h2>
+    <h3>Ingredientes</h3>
+    <ul>
+      <li>1 xícara de café preparado forte,frio</li>
+      <li>2 bolas de sorvete de creme</li>
+      <li>2 colheres (sopa) de creme de leite</li>
+      <li>4 cubos de gelo</li>
+      <li>Algumas gotas de essência de baunilha</li>
+      <li>Açúcar a gosto</li>
+    </ul>
+    <h3>Modo de preparo</h3>
+    <p>
+      Bata todos os ingredientes, rapidamente,no liquidificador<br>
+      Transfira para um copo, não muito pequeno, e sirva<br>
+      Se preferir, enfeite com chantilly e grãos de café
+    </p>
+  </div>
+
+  <div id="biscoito-luzia">
+    <h2>Biscoito da Luzia</h2>
+    <h3>Ingredientes</h3>
+    <ul>
+      <li>8 colheres de sopa de farinha de trigo</li>
+      <li>8 colheres de sopa de maizena</li>
+      <li>4 colheres de sopa de açúcar</li>
+      <li>2 tabletes de claybom</li>
+    </ul>
+    <h3>Modo de preparo</h3>
+    <p>
+      Amassar bem, fazer bolinhas e furar com garfo<br>
+      Forno médio
+    </p>
+  </div>
+
+  <div id="hamburguer-forno">
+    <h2>Hambueguer de forno</h2>
+    <h3>Ingredientes</h3>
+    <ul>
+      <li>1 kg de farinha de trigo</li>
+      <li>2 copos de leite morno</li>
+      <li>1 copo de óleo</li>
+      <li>100 g de fermento de padaria</li>
+      <li>1 pitada de sal</li>
+      <li>500 g de presunto</li>
+      <li>500 g de queijo</li>
+      <li>Carne de hambúrguer</li>
+    </ul>
+    <h3>Modo de preparo</h3>
+    <p>
+      Misture o sal, o fermento e o leite até dissolver<br>
+      Em uma vasilha, coloque a farinha e o óleo<br>
+      Amasse até formar uma massa homogênea<br>
+      Deixe descansar até inchar<br>
+      Abra a massa, do tamanho da carne de hambúrguer<br>
+      Coloque o presunto, o queijo e a carne<br>
+      Feche e leve para assar no forno até derreter o queijo
+    </p>
+  </div>
+  <script src="jquery.js"></script>
+  <script>
+    (function() {
+      var campoBusca = $("#campo-busca");
+      var receitas = $("div");
+      var boloLaranja = $("#bolo-laranja");
+      var boloChocolate = $("#bolo-chocolate");
+      var frappuccino = $("#frappuccino");
+      var biscoitoLuzia = $("#biscoito-luzia");
+      var hamburguerForno = $("#hamburguer-forno");
+
+      campoBusca.on("input", function() {
+        var receita = $("option[value='" + $(this).val() + "']");
+        switch (receita.attr('data-value')) {
+          case "1":
+            receitas.hide();
+            boloLaranja.show();
+            break;
+
+          case "2":
+            receitas.hide();
+            boloChocolate.show();
+            break;
+
+          case "3":
+            receitas.hide();
+            frappuccino.show();
+            break;
+
+          case "4":
+            receitas.hide();
+            biscoitoLuzia.show();
+            break;
+
+          case "5":
+            receitas.hide();
+            hamburguerForno.show();
+            break;
+        }
+      });
+    }());
+  </script>
+</body>
+</html>

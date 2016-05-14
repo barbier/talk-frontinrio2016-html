@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora de investimentos</title>
+  <style>
+    #flash {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <fieldset>
+      <legend>Cálculo de investimento</legend>
+      <label for="txt-nome">Valor aplicado mensalmente: </label>
+      <br>
+      <input type="number" id="investimento" min="100" step="100"
+      placeholder="Valor em R$" required />
+      <br><br>
+      <button type="button" id="btn-calcular">Calcular investimento</button>
+    </fieldset>
+    <p id="flash">O seu rendimento será de R$<output id="res"></output> ao final de 12 meses.</p>
+  </form>
+  <script>
+    (function() {
+      var investimentoMensal = document.getElementById("investimento");
+      var btn = document.getElementById("btn-calcular");
+      var out = document.getElementById("res");
+      var flash = document.getElementById("flash");
+
+      btn.addEventListener("click", function() {
+        var valor = investimentoMensal.value;
+        var mes = parseInt(valor) + (valor * 1.25)/100;
+        var res = 0;
+
+        if (valor == "") {
+          flash.innerHTML = "Por favor, digite um valor."
+          investimentoMensal.focus();
+        } else {
+          for (var i = 0; i <= 12; i++) {
+            res = res + mes;
+          }
+          out.innerHTML = res;
+        }
+
+        flash.style.display = "block";
+      });
+    }());
+  </script>
+</body>
+</html>
